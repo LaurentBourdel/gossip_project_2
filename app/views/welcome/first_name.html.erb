@@ -1,0 +1,21 @@
+
+<html>
+  
+  <body>
+
+<h1> BIENVENUE <%= params[:first_name] %> ! </h1>
+<p> Ici c'est notre super site de potins, il est chouette, non ?</p>
+
+<h1></h1>
+<h3>Liste de potins:</h3>
+
+<% @all_gossips.each do |gossip| %>
+  <p>
+    <p> n°   <%= gossip.id %><br/> </p>
+    <p> Title: <%= gossip.title %><br/></p>
+    <p> Auteur: <%= gossip.user.first_name %><br/></p>
+  </p>
+<% end %>
+
+</body>
+</html>

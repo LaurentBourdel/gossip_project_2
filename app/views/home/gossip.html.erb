@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+  </head>
+  <body>
+  	<h1>The Gossip Project</h1>
+    <h2>Mon super site de gossip, depuis le dossier views !</h2>
+    <h1></h1>
+    <h1></h1>
+    <h3>Liste de potins:</h3>
+    <% @all_gossips.each do |gossip| %>
+  		<p>
+    	<p> n°   <%= gossip.id %><br/> </p>
+    	<p> Title: <%= gossip.title %><br/></p>
+    	<p> Auteur: <%= gossip.user.first_name %><br/></p>
+      <%= link_to 'Détail', home_show_gossip_path(:id => gossip.id) %>
+  		</p>
+		<% end %>
+
+    <div class="card-columns border-info container ">
+  <% Gossip.all.each do | gossip | %>
+    <div class="card border-info text-white bg-info mb-3">
+    <div class="card-header bg-light text-warning">
+        
+        <%= gossip.user.first_name %> <%= gossip.user.last_name %>
+        
+    </div>
+    <div class="card-body">
+        Titre du ragôt : 
+        <h5 class="card-title"><%= gossip.title %></h5>
+        
+    </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+</body>
+</html>
+
+
+
